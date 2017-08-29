@@ -1,66 +1,49 @@
 #include "systemc.h"
-#include "first_counter.cpp"
+#include "Clock_Module.cpp"
+#include "Electrical_Outlet_Module.cpp"
 
 int sc_main(int argc, char* argv[]) {
 	sc_signal<bool> clock; //1 bit
-	sc_signal<bool> reset;
-	sc_signal<bool> enable;
-	sc_signal<sc_uint<5> > hours_out; //5 bit
-	sc_signal<sc_uint<6> > minutes_out; //5 bit
+
+	sc_signal<sc_uint<5> > actual_time_hours_out; //5 bit
+	sc_signal<sc_uint<6> > actual_time_minutes_out; //5 bit
+
+	sc_signal<bool> electrical_outlet_state;
+
 	int i = 0;
 	
-	first_counter counter("COUNTER");
-	counter.clock(clock);
-	counter.reset(reset);
-	counter.enable(enable);
-	counter.hours_out(hours_out);
-	counter.minutes_out(minutes_out);
+	Clock_Module clock_module("Clock");
+	clock_module.clock(clock);
+	clock_module.actual_hours_out(actual_time_hours_out);
+	clock_module.actual_minutes_out(actual_time_minutes_out);
+
+	Electrical_Outlet_Module outlet_module("ElectricalOutlet");
+	outlet_module.clock(clock);
+	outlet_module.actual_hours(actual_time_hours_out);
+	outlet_module.actual_minutes(actual_time_minutes_out);
+	outlet_module.electrical_outlet_state(electrical_outlet_state);
 
 /*** Test Bench ***/
 
-	sc_set_time_resolution(1, SC_SEC);
-	sc_time t1(1, SC_SEC); //half a CLK period (1s)
+	sc_set_time_resolution(100, SC_MS);
+	sc_time t1(500, SC_MS); //half a CLK period (1s)
 
 	// Open VCD file
-	sc_trace_file *wf = sc_create_vcd_trace_file("counter");
+	sc_trace_file *wf = sc_create_vcd_trace_file("Simulation");
 	
-	sc_trace(wf, clock, "clock");
-	sc_trace(wf, reset, "reset");
-	sc_trace(wf, enable, "enable");
-	sc_trace(wf, hours_out, "hours");
-	sc_trace(wf, minutes_out, "minutes");
+	sc_trace(wf, clock, "clk");
+	sc_trace(wf, actual_time_hours_out, "hours");
+	sc_trace(wf, actual_time_minutes_out, "minutes");
+	sc_trace(wf, electrical_outlet_state, "el_outlet");
 
-	reset = 0;
-	enable = 0;
-	for (i = 0; i<5; i++) {
-		clock = 0;
-		sc_start(t1);
-		clock = 1;
-		sc_start(t1);
-	}
-	reset = 1;
-	for (i = 0; i<10; i++) {
-		clock = 0;
-		sc_start(t1);
-		clock = 1;
-		sc_start(t1);
-	}
-	reset = 0;
-	for (i = 0; i<5; i++) {
-		clock = 0;
-		sc_start(t1);
-		clock = 1;
-		sc_start(t1);
-	}
-	enable = 1;
-	for (i = 0; i<65; i++) {
-		clock = 0;
-		sc_start(t1);
-		clock = 1;
-		sc_start(t1);
-	}
+	sc_start(t1);
 
-	enable = 0;
+	for (i = 0; i<3000; i++) {
+		clock = 0;
+		sc_start(t1);
+		clock = 1;
+		sc_start(t1);
+	}
 
 	sc_close_vcd_trace_file(wf);
 	return 0;
