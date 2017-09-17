@@ -8,13 +8,16 @@ SC_MODULE(Electrical_Outlet_Module) {
 
 	sc_out<bool> electrical_outlet_state;
 
-	sc_uint<5> event_hour = 12;
-	sc_uint<6> event_minute = 30;	
+	sc_uint<5> start_hour = 12;
+	sc_uint<6> start_minute = 30;
+
+	sc_uint<5> end_hour = 14;
+	sc_uint<6> end_minute = 35;
 
 	void prepareOutletState() {
-		if ( (actual_hours == event_hour) && (actual_minutes == event_minute) ) {
+		if ( (actual_hours == start_hour) && (actual_minutes == start_minute) ) {
 			electrical_outlet_state = 1;
-		} else {
+		} else if ((actual_hours == end_hour) && (actual_minutes == end_minute)) {
 			electrical_outlet_state = 0;
 		}
 	}
