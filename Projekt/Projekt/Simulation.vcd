@@ -1,5 +1,5 @@
 $date
-     Sep 17, 2017       15:48:11
+     Sep 17, 2017       22:16:47
 $end
 
 $version
@@ -15,6 +15,9 @@ $var wire    1  aaaaa  clk       $end
 $var wire    5  aaaab  hours [4:0]  $end
 $var wire    6  aaaac  minutes [5:0]  $end
 $var wire    1  aaaad  el_outlet       $end
+$var wire    7  aaaae  temp [6:0]  $end
+$var wire    1  aaaaf  heater       $end
+$var wire    1  aaaag  cooler       $end
 $upscope $end
 $enddefinitions  $end
 
@@ -27,6 +30,9 @@ $dumpvars
 b0 aaaab
 b1 aaaac
 0aaaad
+b10 aaaae
+1aaaaf
+0aaaag
 $end
 
 #10
@@ -10555,6 +10561,9 @@ b1 aaaac
 
 #15005
 0aaaaa
+b100000 aaaae
+0aaaaf
+1aaaag
 
 #15010
 1aaaaa
