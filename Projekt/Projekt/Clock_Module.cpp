@@ -26,9 +26,8 @@ SC_MODULE(Clock_Module) {
 		actual_minutes_out.write(actual_minutes);
 	}
 
-	// Constructor for the counter
 	SC_CTOR(Clock_Module) {
 		SC_METHOD(incr_count);
-		sensitive << clock.pos(); //CLK positive edge
+		sensitive << clock.pos();
 	}
 };

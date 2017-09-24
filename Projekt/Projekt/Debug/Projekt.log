@@ -1,11 +1,11 @@
 ﻿  stdafx.cpp
-  Ventilation_and_Heating_Module.cpp
+  AutomatyczneOgrzewanieWentylacja.cpp
   Unknown compiler version - please run the configure tests and report the results
-  Electrical_Outlet_Module.cpp
+  AutomatyczneOswietlenie.cpp
   Unknown compiler version - please run the configure tests and report the results
   main.cpp
   Unknown compiler version - please run the configure tests and report the results
-  Lighting_Module.cpp
+  OswietlenieChodnika.cpp
   Unknown compiler version - please run the configure tests and report the results
   Clock_Module.cpp
   Unknown compiler version - please run the configure tests and report the results

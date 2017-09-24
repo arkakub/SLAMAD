@@ -1,5 +1,5 @@
 $date
-     Sep 17, 2017       22:16:47
+     Sep 24, 2017       00:41:21
 $end
 
 $version
@@ -12,9 +12,9 @@ $end
 
 $scope module SystemC $end
 $var wire    1  aaaaa  clk       $end
-$var wire    5  aaaab  hours [4:0]  $end
-$var wire    6  aaaac  minutes [5:0]  $end
-$var wire    1  aaaad  el_outlet       $end
+$var wire    5  aaaab  h [4:0]  $end
+$var wire    6  aaaac  min [5:0]  $end
+$var wire    1  aaaad  aut_osw       $end
 $var wire    7  aaaae  temp [6:0]  $end
 $var wire    1  aaaaf  heater       $end
 $var wire    1  aaaag  cooler       $end
@@ -29,10 +29,10 @@ $dumpvars
 0aaaaa
 b0 aaaab
 b1 aaaac
-0aaaad
+1aaaad
 b10 aaaae
-1aaaaf
-0aaaag
+0aaaaf
+1aaaag
 $end
 
 #10
@@ -5289,7 +5289,6 @@ b11110 aaaac
 
 #7495
 0aaaaa
-1aaaad
 
 #7500
 1aaaaa
@@ -6167,7 +6166,6 @@ b100011 aaaac
 
 #8745
 0aaaaa
-0aaaad
 
 #8750
 1aaaaa
@@ -10562,8 +10560,6 @@ b1 aaaac
 #15005
 0aaaaa
 b100000 aaaae
-0aaaaf
-1aaaag
 
 #15010
 1aaaaa
@@ -15398,7 +15394,6 @@ b11110 aaaac
 
 #21895
 0aaaaa
-1aaaad
 
 #21900
 1aaaaa
@@ -16276,7 +16271,6 @@ b100011 aaaac
 
 #23145
 0aaaaa
-0aaaad
 
 #23150
 1aaaaa
@@ -20939,153 +20933,4 @@ b100111 aaaac
 
 #29790
 1aaaaa
-b101000 aaaac
-
-#29795
-0aaaaa
-
-#29800
-1aaaaa
-b101001 aaaac
-
-#29805
-0aaaaa
-
-#29810
-1aaaaa
-b101010 aaaac
-
-#29815
-0aaaaa
-
-#29820
-1aaaaa
-b101011 aaaac
-
-#29825
-0aaaaa
-
-#29830
-1aaaaa
-b101100 aaaac
-
-#29835
-0aaaaa
-
-#29840
-1aaaaa
-b101101 aaaac
-
-#29845
-0aaaaa
-
-#29850
-1aaaaa
-b101110 aaaac
-
-#29855
-0aaaaa
-
-#29860
-1aaaaa
-b101111 aaaac
-
-#29865
-0aaaaa
-
-#29870
-1aaaaa
-b110000 aaaac
-
-#29875
-0aaaaa
-
-#29880
-1aaaaa
-b110001 aaaac
-
-#29885
-0aaaaa
-
-#29890
-1aaaaa
-b110010 aaaac
-
-#29895
-0aaaaa
-
-#29900
-1aaaaa
-b110011 aaaac
-
-#29905
-0aaaaa
-
-#29910
-1aaaaa
-b110100 aaaac
-
-#29915
-0aaaaa
-
-#29920
-1aaaaa
-b110101 aaaac
-
-#29925
-0aaaaa
-
-#29930
-1aaaaa
-b110110 aaaac
-
-#29935
-0aaaaa
-
-#29940
-1aaaaa
-b110111 aaaac
-
-#29945
-0aaaaa
-
-#29950
-1aaaaa
-b111000 aaaac
-
-#29955
-0aaaaa
-
-#29960
-1aaaaa
-b111001 aaaac
-
-#29965
-0aaaaa
-
-#29970
-1aaaaa
-b111010 aaaac
-
-#29975
-0aaaaa
-
-#29980
-1aaaaa
-b111011 aaaac
-
-#29985
-0aaaaa
-
-#29990
-1aaaaa
-b10 aaaab
-b0 aaaac
-
-#29995
-0aaaaa
-
-#30000
-1aaaaa
-b1 aaaac
-
+b101000 

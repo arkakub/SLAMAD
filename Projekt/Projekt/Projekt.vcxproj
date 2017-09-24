@@ -158,16 +158,16 @@
     <ClCompile Include="Clock_Module.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Lighting_Module.cpp" />
+    <ClCompile Include="OswietlenieChodnika.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Electrical_Outlet_Module.cpp" />
+    <ClCompile Include="AutomatyczneOswietlenie.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Ventilation_and_Heating_Module.cpp" />
+    <ClCompile Include="AutomatyczneOgrzewanieWentylacja.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
