@@ -1,4 +1,6 @@
 ﻿  stdafx.cpp
+  WykrywaczCzaduGazu.cpp
+  Unknown compiler version - please run the configure tests and report the results
   AutomatyczneOgrzewanieWentylacja.cpp
   Unknown compiler version - please run the configure tests and report the results
   AutomatyczneOswietlenie.cpp
@@ -6,6 +8,8 @@
   main.cpp
   Unknown compiler version - please run the configure tests and report the results
   OswietlenieChodnika.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  ModulAlarmowy.cpp
   Unknown compiler version - please run the configure tests and report the results
   Clock_Module.cpp
   Unknown compiler version - please run the configure tests and report the results

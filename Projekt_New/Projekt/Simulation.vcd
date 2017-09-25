@@ -1,5 +1,5 @@
 $date
-     Sep 24, 2017       00:41:21
+     Sep 25, 2017       00:17:19
 $end
 
 $version
@@ -18,6 +18,7 @@ $var wire    1  aaaad  aut_osw       $end
 $var wire    7  aaaae  temp [6:0]  $end
 $var wire    1  aaaaf  heater       $end
 $var wire    1  aaaag  cooler       $end
+$var wire    1  aaaah  osw_chodnik       $end
 $upscope $end
 $enddefinitions  $end
 
@@ -29,10 +30,11 @@ $dumpvars
 0aaaaa
 b0 aaaab
 b1 aaaac
-1aaaad
+0aaaad
 b10 aaaae
 0aaaaf
-1aaaag
+0aaaag
+0aaaah
 $end
 
 #10
@@ -20926,11 +20928,3 @@ b100110 aaaac
 
 #29780
 1aaaaa
-b100111 aaaac
-
-#29785
-0aaaaa
-
-#29790
-1aaaaa
-b101000 

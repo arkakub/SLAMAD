@@ -3,12 +3,19 @@
 SC_MODULE(OswietlenieChodnika) {
 
 	sc_in_clk clock;
-	sc_in_clk light_sensor;
+	sc_in<bool> light_sensor;
+	sc_in<bool> sensor_enable;
 
 	sc_out<bool> lighting_state; 
-	//lighting is activated when the sensor is in low state
+
 	void prepareLightingState() {
-		lighting_state = !light_sensor;
+		
+		if (sensor_enable == 1) {
+			lighting_state = light_sensor;
+		}
+		else {
+			lighting_state = 0;
+		}
 	}
 
 	SC_CTOR(OswietlenieChodnika) {
